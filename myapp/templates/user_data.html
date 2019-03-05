@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            text-align: center
+        }
+
+        .divcss5 {
+            margin: 0 auto;
+            width: 400px;
+            height: 100px;
+            border: 1px solid #000
+        }
+
+        #userTable {
+            margin: 0 auto;
+            bgcolor: rgb(200, 200, 200);
+            border: 1px solid #000;
+            width: 50%;
+            height: 100%;
+        }
+
+    </style>
+
+    <title>首页</title>
+</head>
+<body>
+
+<h2>用户信息表</h2><br>
+
+<div id="userTable">
+    <table class="table table-bordered" style="margin: 0 auto">
+
+        <th>序号</th>
+        <th>客户账号</th>
+        <th>绑定的账号</th>
+        <th>客户资金余额</th>
+
+        {% for user in users %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ user.userID }}</td>
+                <td>{{ user.Alipay_account }}</td>
+                <td>{{ user.balance }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+<br><br>
+
+<div>
+    <button>添加用户</button>
+</div>
+
+</body>
+</html>
